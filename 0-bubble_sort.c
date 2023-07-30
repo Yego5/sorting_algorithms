@@ -1,21 +1,22 @@
 #include "sort.h"
-
 /**
- * swap_ints - Swaps two integers in array.
- * @a: The first integer
- * @b: The second integer
+ * swap_int - swaps two integers in an array
+ *
+ * @a: First integer to swap.
+ * @b: Second integer to swap.
  */
-void swap_ints(int *a, int *b)
+void swap_int(int *a, int *b)
 {
-    int tmp;
+	int tmp;
 
-    tmp = *a;
-    *a = *b;
-    *b = tmp;
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
 }
 
 /**
- * bubble_sort - Sort an array of integers in ascending order.
+ * bubble_sort - sort an array of integers in ascending order.
+ *
  * @array: An array of integers to sort.
  * @size: The size of the array.
  *
@@ -23,28 +24,27 @@ void swap_ints(int *a, int *b)
  */
 void bubble_sort(int *array, size_t size)
 {
-    size_t j, len = size;
-    bool bubbly = false;
+	size_t i, len = size;
+	bool bubbly = false;
 
-    if (array == NULL || size < 2)
-   	 return;
+	if (array == NULL || size < 2)
+		return;
 
-    while (bubbly == false)
-    {
-   	 bubbly = true;
-   	 for (j = 0; j < len - 1; j++)
-   	 {
-   		 if (array[j] > array[j + 1])
-   		 {
-   			 swap_ints(array + j, array + j + 1);
-   			 print_array(array, size);
-   			 bubbly = false;
-   		 }
-   	 }
-   	 len--;
-    }
+	while (bubbly == false)
+	{
+		bubbly = true;
+		for (i = 0; i < len - 1; i++)
+		{
+			if (array[i] > array[i + 1])
+			{
+				swap_int(array + i, array + i + 1);
+				print_array(array, size);
+				bubbly = false;
+			}
+		}
+		len--;
+	}
 }
-
 /**
  * shadrack yego
  */
